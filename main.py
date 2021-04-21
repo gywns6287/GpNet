@@ -55,8 +55,11 @@ model = GP_Net(marker_den = data.den,
             stacks = config['stack'])
 
 if os.path.isfile('weights.h5'):
+    print('Model load pre-trained weights')
     model.load_weights('weights.h5')
-
+else:
+    print('Model dose not use the pre-trained weights')
+          
 #Implement
 if args.mode == 'train':
     
