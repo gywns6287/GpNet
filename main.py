@@ -59,7 +59,7 @@ if os.path.isfile('weights.h5'):
 
 #Implement
 if args.mode == 'train':
-
+    
     logger = CSVLogger(args.out+"/history.txt", append=True, separator='\t')
 
     loss = sh_mse(config['gv'],config['rv'])
@@ -87,6 +87,7 @@ if args.mode == 'train':
             callbacks= logger)
 
     model.save_weights(args.out+'/weights.h5')
+    data = data_load(args.raw, config['batch_size'], mode = config['data_load'], shuffle = False)
     
 if config['data_load'] == 'G':
         
