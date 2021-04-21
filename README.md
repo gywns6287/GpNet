@@ -36,6 +36,7 @@ You can set the configuration  of GpNet at `main.py`.
 ```
 #### 1.2. Input Data format
 Our code requires the `.raw` data format of `plink`.  See https://www.cog-genomics.org/plink2/formats#raw for more details.
+
 **Caution:** Our code does **not** allow for **variant missing**
 ### 2. Execution
 
