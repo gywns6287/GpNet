@@ -17,7 +17,7 @@ our models were implemented by **tensorflow 2.3** and **keras**
 ## Implementation
 
 ### 1. Preparing
-The pre-trained weight must exist as `weights.h5` and in the path where `main.py` is located.
+The pre-trained weight must exist as `weights.h5` in the path where `main.py` is located.
 #### 1.1. Configuration
 You can set the configuration  of GpNet at main.py.
 
