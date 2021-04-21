@@ -53,7 +53,9 @@ model = GP_Net(marker_den = data.den,
             activation = 'relu', 
             depth = config['depth'], 
             stacks = config['stack'])
-model.load_weights('weights.h5')
+
+if os.path.isfile('weights.h5'):
+    model.load_weights('weights.h5')
 
 #Implement
 if args.mode == 'train':
