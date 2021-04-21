@@ -32,7 +32,7 @@ You can set the configuration  of GpNet at `main.py`.
 'gv' : genetic variance of phenotype
 'rv' : residual variance of phenotype
 'device' : GPU number to use
-'data_load' : A or G (A : array , G : generator)
+'data_load' : A or G (A : array , G : generator) #If you use more than 10000 individuals, we recomand G for memory saving.
 ```
 #### 1.2. Input Data format
 Our code requires the `.raw` data format of `plink`.  See https://www.cog-genomics.org/plink2/formats#raw for more details.
