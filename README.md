@@ -7,7 +7,7 @@ We propose a GpNet, a deep learning network for genomic prediction of beef cattl
 
 ### 1. Locally connected layer
 ![AnyConv com__Figure2](https://user-images.githubusercontent.com/71325306/115521432-1eddaa80-a2c6-11eb-87d8-16ddeffc4e74.png)
-Locally connected layer is inspired by causal convolution (Oord, et al., 2016) and local convolution (Taigman, et al., 2014). By using locally connected layer, the network cannot violate the order of SNP: the SNP at the $n$-position cannot depend on any of SNPs to the 5'-end ($x_{n+1},x_{n+2},...,x_{E}$).  
+Locally connected layer is inspired by causal convolution (Oord, et al., 2016) and local convolution (Taigman, et al., 2014). By using locally connected layer, the network cannot violate the order of SNP: the SNP at the $n$-position cannot depend on any of SNPs to the 5'-end ($`x_{n+1},x_{n+2},...,x_{E}`$).  
 
 ### 2. Network Structure
 ![f](https://user-images.githubusercontent.com/71325306/115522431-1043c300-a2c7-11eb-9a8c-9d1c5287adfc.png)
