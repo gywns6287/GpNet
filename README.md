@@ -1,3 +1,4 @@
+
 # GpNet: Locally connected Network for Genomic prediction
  
 
@@ -17,10 +18,9 @@ our models were implemented by **tensorflow 2.3** and **keras**
 ## Implementation
 
 ### 1. Preparing
-The pre-trained weight must exist as `weights.h5` in the path where `main.py` is located.
+If you want to use the pre-trained weight, the weight file must exist as `weights.h5` in the path where `main.py` is located. The weights file attached at this repository is for GpNet (d: 4, s: 1) and  for predicting GEBV of carcass-weights, trained by the 8000 Korean native cattle.
 #### 1.1. Configuration
-You can set the configuration  of GpNet at main.py.
-
+You can set the configuration  of GpNet at `main.py`.
 ```
 'batch_size' : batch size,
 'epochs' : train epochs
@@ -42,7 +42,9 @@ Our code requires the `.raw` data format of `plink`.  See https://www.cog-genomi
 python main.py --raw [raw] --out [out] --mode train
 ```
 1. [raw] : Path of input raw data.
-2. [out] : Directory name for saving the trainned weights, history and prediction results. 
+2. [out] : Directory name for saving the weights, history and prediction results. 
+
+**example**: `python main.py --raw data/sample.raw --out results --mode train`
 
 #### 2.2. Test GpNet
 ```
@@ -51,15 +53,14 @@ python main.py --raw [raw] --out [out] --mode test
 1. [raw] : Path of input raw data.
 2. [out] : Directory name for saving the prediction results. 
 
-#### 2.3. Example
-**Train sample data**
-```
-python main.py --raw data/sample.raw --out results --mode train
-```
-**Test sample data**
-```
-python main.py --raw data/sample.raw --out results --mode test
-```
+**example**: `python main.py --raw data/sample.raw --out results --mode test`
+
+#### 2.3. Genomic prediction with GpNet
+1. Set configuration  of GpNet at `main.py`.
+2. Prepare train and test sets as separate raw files.
+3. Train GpNet with train set: `python main.py --raw [TRAIN RAW] --out [OUT] --mode train`.
+4. Move `weights.h5` file from the [OUT] to the path where `main.py` is located.
+5. Doing genomic prediction with pre-trained weights:  `python main.py --raw [TEST RAW] --out [OUT2] --mode test`.
 
 ## Reference
 - Oord, A.v.d._, et al._ Wavenet: A generative model for raw audio. _arXiv preprint arXiv:1609.03499_ 2016.
