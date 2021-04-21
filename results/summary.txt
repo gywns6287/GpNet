@@ -1,0 +1,23 @@
+batch_size: 2
+epochs: 10
+lr: 0.0001
+depth: 4
+stack: 1
+gv: 1
+rv: 1
+device: 0
+data_load: G
+-------------------
+Cor: 0.9190434117251681
+Cor/H: 1.299723657271373
+-------------------
+CONFIG
+batch_size: 2
+epochs: 10
+lr: 0.0001
+depth: 4
+stack: 1
+gv: 1
+rv: 1
+device: 0
+data_load: G
